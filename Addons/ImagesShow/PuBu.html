@@ -1,0 +1,53 @@
+<link rel="stylesheet" type="text/css" href="__ROOT__/Addons/ImagesShow/static/css/demo.css" />
+<!--必要样式-->
+<link rel="stylesheet" type="text/css" href="__ROOT__/Addons/ImagesShow/static/css/component.css" />
+<script type="text/javascript" src="__ROOT__/Addons/ImagesShow/static/js/modernizr.custom.js"></script>
+
+
+
+<div id="grid-gallery" class="grid-gallery">
+	<section class="grid-wrap">
+		<ul class="grid">
+                        <volist name='pic' id='v'>
+                            <li>
+                                    <figure>
+                                            <img src=" {$v.pict.0.url}" alt=""/>
+                                            
+                                    </figure>
+                            </li>
+                        </volist>
+			
+			
+		</ul>
+	</section><!-- // grid-wrap -->
+	<section class="slideshow">
+		<ul>
+                     <volist name='pic' id='v'>
+			<li>
+				<figure>
+					<figcaption>
+						<h3>{$v.title}</h3>
+                                                <img src="{$v.pict.0.url}" alt="{$v.title}"/>
+						<p>{$v.description}</p>
+					</figcaption>
+					
+				</figure>
+			</li>
+                     </volist>
+		</ul>
+		<nav>
+			<span class="icon nav-prev"></span>
+			<span class="icon nav-next"></span>
+			<span class="icon nav-close"></span>
+		</nav>
+	</section><!-- // slideshow -->
+</div><!-- // grid-gallery -->
+
+<script type="text/javascript" src="__ROOT__/Addons/ImagesShow/static/js/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Addons/ImagesShow/static/js/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Addons/ImagesShow/static/js/classie.js"></script>
+<script type="text/javascript" src="__ROOT__/Addons/ImagesShow/static/js/cbpGridGallery.js"></script>
+<script type="text/javascript">
+new CBPGridGallery(document.getElementById('grid-gallery'));
+</script>
+
